@@ -20,6 +20,7 @@
 
 $tick: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNjEycHgiIGhlaWdodD0iNTYxLjVweCIgdmlld0JveD0iMCAwIDYxMiA1NjEuNSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjEyIDU2MS41IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBpZD0icmVjdDM3ODAiIGZpbGw9IiM4QTlCQTgiIGQ9Ik00MC45NTEsMzUxLjY5OWw1Ny44NDctNTcuODQ3bDE1NC4yNTgsMTU0LjI1OGwtNTcuODQ3LDU3Ljg0OEw0MC45NTEsMzUxLjY5OXogTTEzNy4zNjEsNDQ4LjEwOUw0ODQuNDQsMTAxLjAzMWw1Ny44NDcsNTcuODQ3bC0zNDcuMDgsMzQ3LjA4TDEzNy4zNjEsNDQ4LjEwOXoiLz48L3N2Zz4=';
 $color-primary: '138, 155, 168';
+$color-highlight: '0, 149, 221';
 $color-black: '138, 155, 168';
 
 $checkbox-label-font-size: 16px !default;
@@ -30,14 +31,13 @@ $checkbox-padding: 8px !default;
 $checkbox-top-offset: ($checkbox-label-height - $checkbox-button-size - $checkbox-inner-margin) / 2;
 $checkbox-ripple-size: $checkbox-label-height * 1.5;
 
-/* ==========  Checkboxes  ========== */
-
 $checkbox-color: unquote("rgb(#{$color-primary})") !default;
 $checkbox-off-color: unquote("rgba(#{$color-black}, 0.54)") !default;
 $checkbox-disabled-color: unquote("rgba(#{$color-black}, 0.26)") !default;
 $checkbox-focus-color: unquote("rgba(#{$color-primary}, 0.26)") !default;
+$checkbox-highlight-color: unquote("rgba(#{$color-highlight}, 0.26)") !default;
 
-.mdl-checkbox {
+.fxa-checkbox {
   position: relative;
   z-index: 1;
   vertical-align: middle;
@@ -52,7 +52,7 @@ $checkbox-focus-color: unquote("rgba(#{$color-primary}, 0.26)") !default;
   }
 }
 
-.mdl-checkbox.is-upgraded input {
+.fxa-checkbox.is-upgraded input {
   line-height: $checkbox-label-height;
   // Hide input element, while still making it respond to focus.
   position: absolute;
@@ -68,7 +68,7 @@ $checkbox-focus-color: unquote("rgba(#{$color-primary}, 0.26)") !default;
   border: none;
 }
 
-.mdl-checkbox__box-outline {
+.fxa-checkbox__box-outline {
   position: absolute;
   top: 2px;
   left: 0;
@@ -83,18 +83,22 @@ $checkbox-focus-color: unquote("rgba(#{$color-primary}, 0.26)") !default;
   border-radius: 2px;
   z-index: 2;
 
-  .mdl-checkbox.is-checked & {
+  &:hover {
+    border-color: $checkbox-highlight-color;
+  }
+
+  .fxa-checkbox.is-checked & {
     border: 2px solid $checkbox-color;
   }
 
-  fieldset[disabled] .mdl-checkbox &,
-  .mdl-checkbox.is-disabled & {
+  fieldset[disabled] .fxa-checkbox &,
+  .fxa-checkbox.is-disabled & {
     border: 2px solid $checkbox-disabled-color;
     cursor: auto;
   }
 }
 
-.mdl-checkbox__focus-helper {
+.fxa-checkbox__focus-helper {
   position: absolute;
   top: 10px;
   left: 8px;
@@ -105,43 +109,43 @@ $checkbox-focus-color: unquote("rgba(#{$color-primary}, 0.26)") !default;
 
   background-color: transparent;
 
-  .mdl-checkbox.is-focused & {
+  .fxa-checkbox.is-focused & {
     box-shadow: 0 0 0px ($checkbox-button-size / 2) rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1);
   }
 
-  .mdl-checkbox.is-focused.is-checked & {
+  .fxa-checkbox.is-focused.is-checked & {
     box-shadow: 0 0 0px ($checkbox-button-size / 2) $checkbox-focus-color;
     background-color: $checkbox-focus-color;
   }
 }
 
-.mdl-checkbox__tick-outline {
+.fxa-checkbox__tick-outline {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  .mdl-checkbox.is-checked & {
+  .fxa-checkbox.is-checked & {
     background: url($tick);
     background-size: cover;
   }
 
-  fieldset[disabled] .mdl-checkbox.is-checked &,
-  .mdl-checkbox.is-checked.is-disabled & {
+  fieldset[disabled] .fxa-checkbox.is-checked &,
+  .fxa-checkbox.is-checked.is-disabled & {
     background: $checkbox-disabled-color url($tick);
   }
 }
 
-.mdl-checkbox__label {
+.fxa-checkbox__label {
   position: relative;
   cursor: pointer;
   font-size: $checkbox-label-font-size;
   line-height: $checkbox-label-height;
   margin: 0;
 
-  fieldset[disabled] .mdl-checkbox &,
-  .mdl-checkbox.is-disabled & {
+  fieldset[disabled] .fxa-checkbox &,
+  .fxa-checkbox.is-disabled & {
     color: $checkbox-disabled-color;
     cursor: auto;
   }
