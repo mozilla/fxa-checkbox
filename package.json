@@ -1,0 +1,27 @@
+{
+  "name": "fxa-checkbox",
+  "version": "1.0.0",
+  "description": "fxa-checkbox because custom checkboxes.",
+  "main": "checkbox.js",
+  "scripts": {
+    "test": "node ./test/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozilla/fxa-checkbox.git"
+  },
+  "author": "",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/mozilla/fxa-checkbox/issues"
+  },
+  "homepage": "https://github.com/mozilla/fxa-checkbox#readme",
+  "devDependencies": {
+    "chai": "3.3.0",
+    "chai-jquery": "2.0.0",
+    "http-server": "0.8.5",
+    "jquery": "2.1.4",
+    "mocha": "2.3.3",
+    "opn": "3.0.2"
+  }
+}

@@ -214,6 +214,15 @@ define([], function () {
    * Initialize element.
    */
   MaterialCheckbox.prototype.init = function() {
+    if (
+      ! 'classList' in document.createElement('div') ||
+      ! 'querySelector' in document ||
+      ! 'addEventListener' in window ||
+      ! Array.prototype.forEach
+    ) {
+      return;
+    }
+
     if (this.element_) {
       this.inputElement_ = this.element_.querySelector(this.CssClasses_.INPUT);
 
