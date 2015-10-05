@@ -38,14 +38,14 @@ $checkbox-focus-color: unquote("rgba(#{$color-primary}, 0.26)") !default;
 $checkbox-highlight-color: unquote("rgba(#{$color-highlight}, 0.26)") !default;
 
 .fxa-checkbox {
-  position: relative;
-  z-index: 1;
-  vertical-align: middle;
   box-sizing: border-box;
-  width: 100%;
   height: $checkbox-label-height;
   margin: 0;
   padding: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  z-index: 1;
 
   &.is-upgraded {
     padding-left: $checkbox-button-size + $checkbox-padding;
@@ -53,34 +53,34 @@ $checkbox-highlight-color: unquote("rgba(#{$color-highlight}, 0.26)") !default;
 }
 
 .fxa-checkbox.is-upgraded input {
-  line-height: $checkbox-label-height;
   // Hide input element, while still making it respond to focus.
+  appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  height: 0;
+  line-height: $checkbox-label-height;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
   position: absolute;
   width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
 }
 
 .fxa-checkbox__box-outline {
+  border-radius: 2px;
+  border: 2px solid $checkbox-off-color;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: $checkbox-button-size;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
   position: absolute;
   top: 2px;
-  left: 0;
-  display: inline-block;
-  box-sizing: border-box;
   width: $checkbox-button-size;
-  height: $checkbox-button-size;
-  margin: 0;
-  cursor: pointer;
-  overflow: hidden;
-  border: 2px solid $checkbox-off-color;
-  border-radius: 2px;
   z-index: 2;
 
   &:hover {
@@ -99,33 +99,33 @@ $checkbox-highlight-color: unquote("rgba(#{$color-highlight}, 0.26)") !default;
 }
 
 .fxa-checkbox__focus-helper {
+  background-color: transparent;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 0;
+  left: 8px;
   position: absolute;
   top: 10px;
-  left: 8px;
-  display: inline-block;
-  box-sizing: border-box;
   width: 0;
-  height: 0;
-
-  background-color: transparent;
 
   .fxa-checkbox.is-focused & {
-    box-shadow: 0 0 0px ($checkbox-button-size / 2) rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0px ($checkbox-button-size / 2) rgba(0, 0, 0, 0.1);
   }
 
   .fxa-checkbox.is-focused.is-checked & {
-    box-shadow: 0 0 0px ($checkbox-button-size / 2) $checkbox-focus-color;
     background-color: $checkbox-focus-color;
+    box-shadow: 0 0 0px ($checkbox-button-size / 2) $checkbox-focus-color;
   }
 }
 
 .fxa-checkbox__tick-outline {
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  height: 100%;
   width: 100%;
+
   .fxa-checkbox.is-checked & {
     background: url($tick);
     background-size: cover;
@@ -138,11 +138,11 @@ $checkbox-highlight-color: unquote("rgba(#{$color-highlight}, 0.26)") !default;
 }
 
 .fxa-checkbox__label {
-  position: relative;
   cursor: pointer;
   font-size: $checkbox-label-font-size;
   line-height: $checkbox-label-height;
   margin: 0;
+  position: relative;
 
   fieldset[disabled] .fxa-checkbox &,
   .fxa-checkbox.is-disabled & {
