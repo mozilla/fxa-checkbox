@@ -39,6 +39,7 @@ $checkbox-highlight-color: unquote("rgba(#{$color-highlight}, 0.26)") !default;
 
 .fxa-checkbox {
   box-sizing: border-box;
+  cursor: pointer;
   height: $checkbox-label-height;
   margin: 0;
   padding: 0;
@@ -72,7 +73,6 @@ $checkbox-highlight-color: unquote("rgba(#{$color-highlight}, 0.26)") !default;
   border-radius: 2px;
   border: 2px solid $checkbox-off-color;
   box-sizing: border-box;
-  cursor: pointer;
   display: inline-block;
   height: $checkbox-button-size;
   left: 0;
