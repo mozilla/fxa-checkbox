@@ -31,11 +31,7 @@ define([], function () {
    */
   var MaterialCheckbox = function MaterialCheckbox(element) {
     this.element_ = element;
-
-    // Initialize instance.
-    this.init();
   };
-  window['MaterialCheckbox'] = MaterialCheckbox;
 
   /**
    * Store constants in one place so they can be updated easily.
