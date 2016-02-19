@@ -107,8 +107,8 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
 
   fieldset[disabled] .fxa-checkbox &,
   .fxa-checkbox.is-disabled & {
-    border: 2px solid $checkbox-disabled-color;
     cursor: auto;
+    filter: opacity(30%);
   }
 }
 
@@ -145,10 +145,6 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
     background-size: cover;
   }
 
-  fieldset[disabled] .fxa-checkbox.is-checked &,
-  .fxa-checkbox.is-checked.is-disabled & {
-    background: $checkbox-disabled-color url($tick);
-  }
 }
 
 .fxa-checkbox__label {
@@ -160,7 +156,6 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
 
   fieldset[disabled] .fxa-checkbox &,
   .fxa-checkbox.is-disabled & {
-    color: $checkbox-disabled-color;
     cursor: auto;
   }
 }
