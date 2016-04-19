@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/mozilla/fxa-checkbox#readme",
   "devDependencies": {
-    "chai": "3.3.0",
+    "chai": "3.5.0",
     "chai-jquery": "2.0.0",
-    "http-server": "0.8.5",
-    "jquery": "2.1.4",
-    "mocha": "2.3.3",
-    "opn": "3.0.2"
+    "http-server": "0.9.0",
+    "jquery": "2.2.3",
+    "mocha": "2.4.5",
+    "opn": "4.0.1"
   }
 }
