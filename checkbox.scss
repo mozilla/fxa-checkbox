@@ -58,10 +58,12 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
         border: 2px solid $checkbox-active-color;
       }
 
-      .fxa-checkbox__tick-outline {
-        background: url($tick);
-        background-size: cover;
-        filter: saturate(30%) brightness(50%);
+      &.is-checked {
+        .fxa-checkbox__tick-outline {
+          background: url($tick);
+          background-size: cover;
+          filter: saturate(40%) brightness(50%);
+        }
       }
     }
   }
