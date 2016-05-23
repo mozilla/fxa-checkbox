@@ -21,7 +21,7 @@
     "chai-jquery": "2.0.0",
     "http-server": "0.9.0",
     "jquery": "2.2.4",
-    "mocha": "2.4.5",
+    "mocha": "2.5.0",
     "opn": "4.0.2"
   }
 }
