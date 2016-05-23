@@ -87,7 +87,7 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
 
 .fxa-checkbox__box-outline {
   border-radius: 2px;
-  border: 2px solid $checkbox-off-color;
+  border: 2px solid $checkbox-color;
   box-sizing: border-box;
   display: inline-block;
   height: $checkbox-button-size;
@@ -98,10 +98,6 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
   top: 2px;
   width: $checkbox-button-size;
   z-index: 2;
-
-  &:hover {
-    border-color: $checkbox-highlight-color;
-  }
 
   .fxa-checkbox.is-checked & {
     border: 2px solid $checkbox-color;
