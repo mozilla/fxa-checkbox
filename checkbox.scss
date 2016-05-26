@@ -43,6 +43,7 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
   box-sizing: border-box;
   cursor: pointer;
   height: $checkbox-label-height;
+  line-height: $checkbox-label-height;
   margin: 0;
   padding: 0;
   position: relative;
