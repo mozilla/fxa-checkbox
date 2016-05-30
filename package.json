@@ -1,6 +1,6 @@
 {
   "name": "fxa-checkbox",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "fxa-checkbox because custom checkboxes.",
   "main": "checkbox.js",
   "scripts": {
