@@ -233,8 +233,9 @@ define([], function () {
 
       boxOutline.appendChild(tickOutline);
 
-      this.element_.appendChild(tickContainer);
-      this.element_.appendChild(boxOutline);
+      var firstChild = this.element_.firstChild;
+      this.element_.insertBefore(tickContainer, firstChild);
+      this.element_.insertBefore(boxOutline, firstChild);
 
       if (this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT)) {
         this.element_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);
