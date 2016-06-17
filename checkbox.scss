@@ -96,7 +96,7 @@ $checkbox-active-color: unquote("rgba(#{$color-active}, 1.0)") !default;
   margin: 0;
   overflow: hidden;
   position: absolute;
-  top: 2px;
+  top: 0px;
   width: $checkbox-button-size;
   z-index: 2;
 
